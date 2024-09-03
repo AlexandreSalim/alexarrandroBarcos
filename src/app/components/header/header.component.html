@@ -1,0 +1,117 @@
+<header>
+
+  <!-- celular -->
+  <section class="header flex justify-between md:hidden p-3">
+    <div class="flex gap-5 items-center">
+      <mat-icon class="icon-menu icon" (click)="toggleSidebar()">menu</mat-icon>
+      <img src="assets/img/topNautikaLogo.webp" width="150px">
+    </div>
+
+    <nav 
+    class="text-white nav_color h-full w-80 flex flex-col gap-0 absolute left-0 top-0 border-r border-cyan-100" 
+    [ngClass]="{'menu-open': !isOpen, 'menu-closed': isOpen}">
+
+      <div class="grid gap-5 nav_blue p-5">
+        <div class="flex items-center gap-12">
+
+          <div class="flex items-center gap-2">
+            <mat-icon class="person">person</mat-icon>
+            <a href="#">Olá, Entre ou cadastra-se</a>
+          </div>
+
+          <mat-icon (click)="toggleSidebar()" class="close">close</mat-icon>
+        </div>
+        
+        <mat-divider class="mat-divider_color"></mat-divider>
+        
+        <div>
+          <a href="#">
+            <div class="flex items-center">
+              <mat-icon class="email">mail</mat-icon> Email:
+            </div>
+            <p class="margin0">sac.topnautika.com.br</p>
+          </a>
+        </div>
+
+        <mat-divider class="mat-divider_color"></mat-divider>
+
+        <div class="grid gap-2">
+          <div class="flex items-center">
+            <mat-icon class="location_on">location_on</mat-icon> Rastrear pedido
+          </div>
+          <input type="text" placeholder="Código de Rastrear?" class="form_input w-full rounded-3xl h-10 border-2 border-white pl-5">
+          <mat-icon class="chevron_right">chevron_right</mat-icon>
+        </div>
+
+      </div>
+
+      <div class="nav_white h-full bg-white text-black font-sans font-extrabold p-5 gap-3 grid">
+
+        <div class="flex items-center gap-11">
+          <a href="#">ATRACAÇÃO E ANCORAGEM</a>
+          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
+        </div>
+
+        <div class="flex items-center gap-10">
+          <a href="#">ELETRÔNICOS E NAVEGAÇÃO</a>
+          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
+        </div>
+
+        <div class="flex items-center eltrica_gap">
+          <a href="#">ELÉTRICA E ILUMINAÇÃO</a>
+          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
+        </div>
+
+        <div class="flex items-center hidraulico_gap">
+          <a href="#">HIDRÁULICA</a>
+          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
+        </div>
+
+        <div class="flex items-center gap-11">
+          <a href="#">MECÂNICA E MANUTENÇÃO</a>
+          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
+        </div>
+
+        <div class="flex items-center gap-10">
+          <a href="#">SALVATAGEM E SEGURANÇA</a>
+          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
+        </div>
+
+        <div class="flex items-center gap-28">
+          <a href="#">ESPORTES E LAZER</a>
+          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
+        </div>
+
+        <div class="flex items-center pesca_gap">
+          <a href="#">PESCA</a>
+          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
+        </div>
+      </div>
+
+    </nav>
+
+    <div class="flex gap-3 items-center">
+      <mat-icon class="icon-person icon">account_circle</mat-icon>
+      <mat-icon class="icon-bag icon">shopping_bag</mat-icon>
+    </div>
+  </section>
+
+  <!-- desktop -->
+  <section class="hidden md:header md:flex md:justify-between md:p-3 md:bg-slate-600 ">
+    <div class="flex gap-5 items-center">
+      <mat-icon class="icon-menu icon">menu</mat-icon>
+      <img src="assets/img/topNautikaLogo.webp" width="150px">
+    </div>
+
+    <div class="flex gap-3 items-center">
+      <mat-icon class="icon-person icon">account_circle</mat-icon>
+      <mat-icon class="icon-bag icon">shopping_bag</mat-icon>
+    </div>
+  </section>
+
+  <form class="form h-10 mt-4 px-3">
+    <input type="text" placeholder="Olá, o que você procura?" class="form_input w-full rounded-3xl h-full border-2 border-cyan-600 pl-6">
+    <mat-icon class="form_icon">search</mat-icon>
+  </form>
+
+</header>
