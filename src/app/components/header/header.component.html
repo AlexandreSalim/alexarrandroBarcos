@@ -1,15 +1,19 @@
-<header>
+<header class="xl:mx-20 2xl:mx-64">
 
   <!-- celular -->
   <section class="header flex justify-between md:hidden p-3">
     <div class="flex gap-5 items-center">
       <mat-icon class="icon-menu icon" (click)="toggleSidebar()">menu</mat-icon>
-      <img src="assets/img/topNautikaLogo.webp" width="150px">
+      <div>
+        <mat-icon>directions_boat</mat-icon>
+        <mat-icon>sailing</mat-icon>
+        <mat-icon>rowing</mat-icon>
+        <mat-icon>houseboat</mat-icon>
+      </div>
     </div>
 
-    <nav 
-    class="text-white nav_color h-full w-80 flex flex-col gap-0 absolute left-0 top-0 border-r border-cyan-100" 
-    [ngClass]="{'menu-open': !isOpen, 'menu-closed': isOpen}">
+    <nav class="text-white nav_color h-full w-80 flex flex-col gap-0 absolute left-0 top-0 border-r border-cyan-100"
+      [ngClass]="{'menu-open': !isOpen, 'menu-closed': isOpen}">
 
       <div class="grid gap-5 nav_blue p-5">
         <div class="flex items-center gap-12">
@@ -21,15 +25,15 @@
 
           <mat-icon (click)="toggleSidebar()" class="close">close</mat-icon>
         </div>
-        
+
         <mat-divider class="mat-divider_color"></mat-divider>
-        
+
         <div>
           <a href="#">
             <div class="flex items-center">
               <mat-icon class="email">mail</mat-icon> Email:
             </div>
-            <p class="margin0">sac.topnautika.com.br</p>
+            <p class="margin0">alerrandroBarcos</p>
           </a>
         </div>
 
@@ -39,53 +43,610 @@
           <div class="flex items-center">
             <mat-icon class="location_on">location_on</mat-icon> Rastrear pedido
           </div>
-          <input type="text" placeholder="Código de Rastrear?" class="form_input w-full rounded-3xl h-10 border-2 border-white pl-5">
+          <input type="text" placeholder="Código de Rastrear?"
+            class="form_input w-full rounded-3xl h-10 border-2 border-white pl-5">
           <mat-icon class="chevron_right">chevron_right</mat-icon>
         </div>
 
       </div>
 
-      <div class="nav_white h-full bg-white text-black font-sans font-extrabold p-5 gap-3 grid">
+      <div class="nav_white bg-white text-black font-sans font-extrabold  gap-3 grid">
 
-        <div class="flex items-center gap-11">
-          <a href="#">ATRACAÇÃO E ANCORAGEM</a>
-          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
-        </div>
+        <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)"
+          (closed)="panelOpenState.set(false)">
+          
+          <mat-expansion-panel-header>
+            <mat-panel-title><strong>ATRACAÇÃO E ANCORAGEM</strong></mat-panel-title>
+          </mat-expansion-panel-header>
 
-        <div class="flex items-center gap-10">
-          <a href="#">ELETRÔNICOS E NAVEGAÇÃO</a>
-          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
-        </div>
+          <div class="flex flex-col gap-6">
 
-        <div class="flex items-center eltrica_gap">
-          <a href="#">ELÉTRICA E ILUMINAÇÃO</a>
-          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
-        </div>
+          <a href="#"><strong>Ver tudo</strong></a>
 
-        <div class="flex items-center hidraulico_gap">
-          <a href="#">HIDRÁULICA</a>
-          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
-        </div>
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Âncoras</mat-panel-title>
+            </mat-expansion-panel-header>
 
-        <div class="flex items-center gap-11">
-          <a href="#">MECÂNICA E MANUTENÇÃO</a>
-          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
-        </div>
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Âncoras Galvanizadas</a> <br>
+              <a href="#">Âncoras Inox</a>
+            </div>
 
-        <div class="flex items-center gap-10">
-          <a href="#">SALVATAGEM E SEGURANÇA</a>
-          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
-        </div>
+          </mat-expansion-panel>
 
-        <div class="flex items-center gap-28">
-          <a href="#">ESPORTES E LAZER</a>
-          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
-        </div>
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Cabos</mat-panel-title>
+            </mat-expansion-panel-header>
 
-        <div class="flex items-center pesca_gap">
-          <a href="#">PESCA</a>
-          <mat-icon class="nav_white_icon-chevron_right">chevron_right</mat-icon>
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Cabo Retinida</a> <br>
+              <a href="#">Cabo Torcida</a> <br>
+              <a href="#">Cabo trançado</a>
+            </div>
+
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Correntes</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Acessórios Para Corrente</a> <br>
+              <a href="#">Correntes Inox</a> <br>
+              <a href="#">Correntes Galvanizadas</a>
+            </div>
+
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Defensas e Boias</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Boias</a> <br>
+              <a href="#">Capas para Defensa</a> <br>
+              <a href="#">Defensas</a> <br>
+              <a href="#">Porta Defensa</a>
+            </div>
+
+
+          </mat-expansion-panel>
+
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Defensas e Boias</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Acessórios Para Guinchos</a> <br>
+              <a href="#">Guinchos Vertical</a> <br>
+            </div>
+
+          </mat-expansion-panel>
+          
+          </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+          <mat-expansion-panel-header>
+            <mat-panel-title><strong>ELETRÔNICOS E NAVEGAÇÃO</strong></mat-panel-title>
+          </mat-expansion-panel-header>
+        
+          <div class="flex flex-col gap-1">
+        
+          <a href="#"><strong>Ver tudo</strong></a><br>
+          <a href="#">Antena</a><br>
+          <a href="#">Bandeira</a><br>
+          <a href="#">Binóculos</a><br>
+          <a href="#">Bússola</a><br>
+          <a href="#">Buzina</a><br>
+          <a href="#">Eletronicos de Navegação</a><br>
+          <a href="#">Gps e Sonar</a><br>
+          
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Luzes de Navegação</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Luz de Alcançado</a> <br>
+              <a href="#">Luz de Ancoragem</a> <br>
+              <a href="#">Luz de Bombordo</a> <br>
+              <a href="#">Luz de Bordo</a> <br>
+              <a href="#">Luz de Cortesia</a> <br>
+              <a href="#">Luz de Mastro</a> <br>
+              <a href="#">Luz de Pier</a> <br>
+              <a href="#">Luz de Popa</a> <br>
+              <a href="#">Luz de Top</a> <br>
+            </div>
+        
+          </mat-expansion-panel><br>
+          
+          <a href="#">Rádio</a><br>
+          <a href="#">Som</a><br>
+          <a href="#">Volante</a>
+        
+          </div>
+        
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+          <mat-expansion-panel-header>
+            <mat-panel-title><strong>ELÉTRICA E ILUMINAÇÃO</strong></mat-panel-title>
+          </mat-expansion-panel-header>
+          
+          <div class="flex flex-col gap-6">
+
+          <a href="#"><strong>Ver tudo</strong></a>
+          
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Baterias</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Baterias</a> <br>
+              <a href="#">Carregadores</a> <br>
+              <a href="#">Chave de Bateria</a> <br>
+              <a href="#">Inversores</a> <br>
+              <a href="#">Pilhas</a> 
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Elétrica</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Acessórios Elétricos</a> <br>
+              <a href="#">Botões Elétricos</a> <br>
+              <a href="#">Cabos Elétricos</a> <br>
+              <a href="#">Interruptores</a> <br>
+              <a href="#">Painel Elétrico</a> <br>
+              <a href="#">Tomada e Extensão</a> 
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Iluminação Externa</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Farol de Busca</a> <br>
+              <a href="#">Luz de Cortesia</a> <br>
+              <a href="#">Luz Subaquática</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Iluminação Interna e Cabine</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Luminárias</a> <br>
+              <a href="#">Luz de Cabine</a> 
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Luzes de Navegação</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Luz de Alcançado</a> <br>
+              <a href="#">Luz de Ancoragem</a> <br>
+              <a href="#">Luz de Mastro</a> <br>
+              <a href="#">Luz de Navegação</a> <br>
+              <a href="#">Luz de Top</a> <br>
+              <a href="#">Luz Strobo</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
         </div>
+        
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+          <mat-expansion-panel-header>
+            <mat-panel-title><strong>HIDRÁULICA</strong></mat-panel-title>
+          </mat-expansion-panel-header>
+          
+          <div class="flex flex-col gap-1">
+            <a href="#"><strong>Ver Tudo</strong></a><br>
+            <a href="#">Abraçadeiras</a>
+          </div> <br>
+        
+          <div class="flex flex-col gap-6">
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Bombas</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Acessórios Para Bomba</a> <br>
+              <a href="#">Bomba de Circulação de Ar</a> <br>
+              <a href="#">Bomba de Piscina</a> <br>
+              <a href="#">Bomba de Porão</a> <br>
+              <a href="#">Bomba de Pressurização</a> <br>
+              <a href="#">Bomba de Transferência</a> <br>
+              <a href="#">Bomba Maceradora</a> <br>
+              <a href="#">Bomba Manual</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Componentes Hidráulicos</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Buchas e Torneiras</a> <br>
+              <a href="#">Bujão</a> <br>
+              <a href="#">Chuveiros</a> <br>
+              <a href="#">Entrada e Saída de Água</a> <br>
+              <a href="#">Filtros</a> <br>
+              <a href="#">Ralos</a> <br>
+              <a href="#">Registros</a> <br>
+              <a href="#">Vàlvulas</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Tanques e Caixa Coletora</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Caixa Coletroa</a> <br>
+              <a href="#">Tanque de Águas Negras</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Vasos Sanitários</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Acessórios Para Vasos</a> <br>
+              <a href="#">Macerador</a> <br>
+              <a href="#">Vaso Sanitário</a> <br>
+            </div>
+        
+          </mat-expansion-panel>
+          
+        </div>
+        
+        
+        </mat-expansion-panel> 
+
+        <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+          <mat-expansion-panel-header>
+            <mat-panel-title><strong>MECÂNICA E MANUTENÇÃO</strong></mat-panel-title>
+          </mat-expansion-panel-header>
+          
+          <div class="flex flex-col gap-6">
+        
+          <a href="#"><strong>Ver Tudo</strong></a>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Componetes Mecânicos</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Comandos</a> <br>
+              <a href="#">Direção</a> <br>
+              <a href="#">Flaps</a> <br>
+              <a href="#">Linha de Combustível</a> <br>
+              <a href="#">Medidores e Instrumentos</a> <br>
+              <a href="#">Peças de Proteção</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Limpeza e Proteção</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Desengordurante</a> <br>
+              <a href="#">Desengraxante</a> <br>
+              <a href="#">Detergente</a> <br>
+              <a href="#">Odorizadores</a> <br>
+              <a href="#">Polidores</a> <br>
+              <a href="#">Protetor de Superfíce</a> <br>
+              <a href="#">Utensílios de Limpeza</a> <br>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Motor de Popa</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Filtro</a> <br>
+              <a href="#">Rotor</a> <br>
+              <a href="#">Vela</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <a href="#">Óleo e Aditivo</a>
+        
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Polimento</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Cera</a> <br>
+              <a href="#">Massa</a> <br>
+              <a href="#">Politriz</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>químicos</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Aditivos</a> <br>
+              <a href="#">Fitas e Adesivos</a> <br>
+              <a href="#">Lubrificação</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Ventilação</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Blowers</a> <br>
+              <a href="#">Saída de Ar</a> 
+            </div>
+        
+          </mat-expansion-panel>
+          
+        </div>
+        
+        
+        </mat-expansion-panel> 
+
+        <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+          <mat-expansion-panel-header>
+            <mat-panel-title><strong>SALVATAGEM E SEGURANÇA</strong></mat-panel-title>
+          </mat-expansion-panel-header>
+          
+          <div class="flex flex-col gap-6">
+        
+            
+            <a href="#"><strong>Ver Tudo</strong></a>
+            
+            <a href="#">Boia Circular</a>
+        
+            <a href="#">Colete Salvatagem</a>
+        
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Colete Salva Vidas</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Colete Homologados Classe ||</a> <br>
+              <a href="#">Colete Homologados Classe |||</a> <br>
+              <a href="#">Colete Homologados Classe V</a> <br>
+              <a href="#">Colete Para Cachorro</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <a href="#">Extintores</a>
+        
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Sinalização Visual</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Bandeiras</a> <br>
+              <a href="#">Luminosos</a> <br>
+              <a href="#">Pirotécnicos</a>
+            </div>
+        
+          </mat-expansion-panel>
+          
+        </div>
+        
+        
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+          <mat-expansion-panel-header>
+            <mat-panel-title><strong>ESPORTES E LAZER</strong></mat-panel-title>
+          </mat-expansion-panel-header>
+          
+          <div class="flex flex-col gap-6">
+        
+            
+            <a href="#"><strong>Ver Tudo</strong></a>
+        
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Boias Infláveis e Flutuantes</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Acessórios Para Boias</a> <br>
+              <a href="#">Boias Infláveis</a> <br>
+              <a href="#">Tapetes Flutuantes</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Caiaques</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Acessórios Para Caiaque</a> <br>
+              <a href="#">Caiaque Inflável</a> <br>
+              <a href="#">Caiaque Rígido</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <a href="#">Colete</a>
+        
+          <a href="#">Guarda-sol e Ombrelone</a>
+        
+          <a href="#">Jet Ski</a>
+        
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Mergulho e Natação</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Acessórios de Mergulho e Natação</a> <br>
+              <a href="#">Ducha Portátil</a> <br>
+              <a href="#">Máscara de Mergulho</a> <br>
+              <a href="#">Nadadeiras</a> <br>
+              <a href="#">Óculos de Natação</a> <br>
+              <a href="#">Snorkel</a>
+            </div>
+        
+          </mat-expansion-panel>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Stand Up</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Acessórios Para Stand Up</a> <br>
+              <a href="#">Prancha de Stand Up</a>
+            </div>
+        
+          </mat-expansion-panel>
+          
+          <a href="#">Surf</a>
+        
+        </div>
+        
+        
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+          <mat-expansion-panel-header>
+            <mat-panel-title><strong>ESPORTES E LAZER</strong></mat-panel-title>
+          </mat-expansion-panel-header>
+          
+          <div class="flex flex-col gap-6">
+        
+            
+          <a href="#"><strong>Ver Tudo</strong></a>
+        
+          <a href="#">Acessórios</a>
+        
+          <a href="#">Anzol e Jig</a>
+        
+          <a href="#">Carretilha</a>
+        
+          <a href="#">Garateia</a>
+        
+          <a href="#">Isca Artificial</a>
+        
+          <a href="#">Linha</a>
+        
+          <a href="#">Maleta</a>
+        
+          <a href="#">Molinete</a>
+        
+          <mat-expansion-panel class="header_expansion" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header class="filho">
+              <mat-panel-title>Pesca Submarina</mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <div class="flex flex-col gap-1">
+              <a href="#"><strong>Ver tudo</strong></a> <br>
+              <a href="#">Arbalete</a> <br>
+              <a href="#">Arpão</a>
+              <a href="#">Faca</a>
+              <a href="#">Lastro</a>
+              <a href="#">Máscara</a>
+              <a href="#">Nadadeira</a>
+              <a href="#">Roupa de Mergulho</a>
+              <a href="#">Sapatilha</a>
+            </div>
+        
+          </mat-expansion-panel>
+          
+          <a href="#">Vara</a>
+        
+        </div>
+        
+        
+        </mat-expansion-panel> 
+
       </div>
 
     </nav>
@@ -94,24 +655,125 @@
       <mat-icon class="icon-person icon">account_circle</mat-icon>
       <mat-icon class="icon-bag icon">shopping_bag</mat-icon>
     </div>
+
+    
   </section>
 
-  <!-- desktop -->
-  <section class="hidden md:header md:flex md:justify-between md:p-3 md:bg-slate-600 ">
-    <div class="flex gap-5 items-center">
-      <mat-icon class="icon-menu icon">menu</mat-icon>
-      <img src="assets/img/topNautikaLogo.webp" width="150px">
-    </div>
-
-    <div class="flex gap-3 items-center">
-      <mat-icon class="icon-person icon">account_circle</mat-icon>
-      <mat-icon class="icon-bag icon">shopping_bag</mat-icon>
-    </div>
-  </section>
-
-  <form class="form h-10 mt-4 px-3">
-    <input type="text" placeholder="Olá, o que você procura?" class="form_input w-full rounded-3xl h-full border-2 border-cyan-600 pl-6">
+  <form class="form h-10 mt-4 px-3 md:hidden">
+    <input type="text" placeholder="Olá, o que você procura?"
+      class="form_input w-full rounded-3xl h-full border-2 border-cyan-600 pl-6">
     <mat-icon class="form_icon">search</mat-icon>
   </form>
 
+
+  <!-- desktop -->
+
+  <section class="hidden header md:flex md:justify-evenly md:items-center md:p-3 md:gap-3 desktop">
+    <!-- logo -->
+    <div class="flex gap-5 items-center">
+      <div>
+        <mat-icon>directions_boat</mat-icon>
+        <mat-icon>sailing</mat-icon>
+        <mat-icon>rowing</mat-icon>
+        <mat-icon>houseboat</mat-icon>
+      </div>
+    </div>
+
+    <!-- input -->
+    <form class="form h-10  lg:w-80">
+      <input type="text" placeholder="Olá, o que você procura?"
+        class="form_input w-full rounded-3xl h-full border-2 border-cyan-600 pl-3">
+      <mat-icon class="form_icon">search</mat-icon>
+    </form>
+
+    <!-- central, cadastrar sacola -->
+    <div class="flex gap-3 items-center caixa_do_cliente">
+      
+      <div (mouseenter)="showDiv()" (mouseleave)="hideDiv()">
+
+        <div class="flex items-center gap-2">
+
+          <mat-icon class="icon-person icon">account_circle</mat-icon>
+          <div class="flex flex-col">
+            <p class="margin0 text-xs">Central de</p>
+            <strong class="margin0">Atendimento</strong>
+          </div>
+
+        </div>
+
+        <div *ngIf="isDivVisible" class="p-4 bg-gray-100 rounded shadow-lg absolute gap-2 flex flex-col bg color">
+         
+          <a href="#" class="flex bg_green rounded-full h-10 justify-center items-center w-52 gap-1 text-white font-bold">
+          <mat-icon>home</mat-icon>
+          Fale pelo WatsApp
+         </a>
+
+         <a href="#" class="flex bg_blue rounded-full h-10 justify-center items-center w-52 gap-1 text-white font-bold">
+          <mat-icon>home</mat-icon>
+          Envie uma Mensagem
+         </a>
+
+         <div>
+          <a href="#">
+            <div class="flex items-center">
+              <mat-icon class="color_blue">mail</mat-icon> Email:
+            </div>
+            <p class="margin0">alerrandroBarcos</p>
+          </a>
+        </div>
+
+        <mat-divider class="mat-divider_color"></mat-divider>
+
+        <div class="grid gap-2">
+          <div class="flex items-center">
+            <mat-icon class="color_blue">location_on</mat-icon> Rastrear pedido
+          </div>
+          <input type="text" placeholder="Código de Rastrear?"
+            class="form_input w-full rounded-3xl h-10 border-2 border-white pl-5">
+          <mat-icon class="chevron_right">chevron_right</mat-icon>
+        </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="flex items-center gap-2">
+        <mat-icon class="icon-bag icon">shopping_bag</mat-icon>
+        <div class="flex flex-col">
+          <p class="margin0 text-xs">Entre ou</p>
+          <strong class="margin0">Cadastre-se</strong>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <mat-icon class="icon-bag icon">help</mat-icon>
+        <div class="flex flex-col">
+          <p class="margin0 text-xs">Minha Sacola</p>
+          <strong class="margin0">R$0,00</strong>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+   <!-- utensilios do barco -->
+
+   <div class="md:flex md:text-xs md:gap-8 lg:gap-10 px-5 pt-3 items-center hidden utensilios text-white">
+
+    <div *ngFor="let item of items; let i = index" (mouseenter)="toggleVisibility(i)" (mouseleave)="clearVisibility(i)" class="mb-4">
+        {{ item.name }} <!-- Exibindo o nome de cada item -->
+
+        <div *ngIf="visibleIndex === i" class="p-4 bg-gray-100 rounded shadow-lg overflow-y-auto w-56 h-72 absolute"  
+        [ngClass]="{'lg:right-0': i >= items.length - 1, 'xl:right-11': i >= items.length - 1, '2xl:right-72': i >= items.length - 1, 'md:right-5': i >= items.length - 2}" 
+        >
+            <a *ngFor="let link of item.links" href="#" class="block py-1 hover:text-blue-500 text-black">{{ link }}</a>
+        </div>
+    </div>
+
+
+</div>
+
+
 </header>
+

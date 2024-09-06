@@ -25,7 +25,6 @@
     .close, .person{border-radius: 100%; border: solid 2px white; font-size: 15px; display: flex; justify-content: center; align-items: center;}
     .mat-divider_color{border: solid 1px #1d76b0; border-bottom-style: none;}
     .email, .location_on{font-size: 22px;}
-    .margin0{margin: 0;}
     .chevron_right{
         background-color: #0065a6; 
         height: 40px;
@@ -42,9 +41,60 @@
 
 }
 
-.nav_white{
-    &_icon-chevron_right{transform: rotate(90deg);}
-    .eltrica_gap{gap: 4.2rem;}
-    .hidraulico_gap{gap: 9.7rem;}
-    .pesca_gap{gap: 12.5rem;}
+.header_expansion{
+    box-shadow: none !important;
+    height: 100%;
 }
+
+.filho{
+    padding: 0 24px 0 0 !important;
+    height: 20px !important;
+}
+
+.desktop{
+    .caixa_do_cliente {
+
+        .bg{
+
+            &_green{
+                background-color: #25d464;
+            }
+            
+            &_blue{
+                background-color: #0065a6;
+            }
+        }
+
+        .color{
+
+            &_blue{
+                color: #0065a6;
+            }
+
+            .chevron_right{
+                background-color: #0065a6; 
+                color: white;
+                height: 40px;
+                width: 40px; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center;
+                border-radius: 0px 24px 24px 0px; 
+                position: relative; 
+                bottom: 48px;
+                left: 167px;
+                font-weight: 600;
+            }
+        }
+
+        .margin0{margin: 0;}
+
+    }
+
+
+}
+
+.utensilios{
+    background-color: #0065a6;
+}
+

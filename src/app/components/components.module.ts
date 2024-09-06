@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BibliotecasExternas,
